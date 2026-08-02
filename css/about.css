@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(253, 250, 245);
+}
+.test2{
+    height: 110px;
+}
+.contact {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}
+h1{
+    color: rgb(90, 125, 101);
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+}
+p{
+    color: rgb(54, 40, 142);
+    font-family: Inter, sans-serif;
+    line-height: 24px;
+    margin-top: 20px;
+}
+#explore {
+    background-color: rgb(90, 125, 101);
+    color: rgb(255, 255, 255);
+    font-family: Inter, sans-serif;
+    font-size:14px ;
+    font-weight: 700;
+    width: 180px;
+    height: 50px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 4px;
+}
+#explore:hover{
+    background-color: #d4af37;
+    color: white;
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+#services {
+    background-color: rgb(253, 250, 245);
+}
+.service-card {
+    text-align: center;
+    padding: 40px 25px;
+    background-color: #fff;
+    border: 1px solid rgb(230, 227, 218);
+    border-radius: 8px;
+    height: 100%;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: rgb(170, 125, 70);
+}
+.service-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(253, 245, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 26px;
+    color: rgb(170, 125, 70);
+}
+.service-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+}
+.service-card p {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}

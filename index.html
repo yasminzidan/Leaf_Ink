@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home - Leaf & Ink</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="Leaf & Ink">
+    <meta name="keywords" content="online bookstore, buy books online, book shop, textbooks, novels, book store">
+    <meta name="description"
+        content="Online bookstore offering a wide selection of books at great prices, with fast delivery and easy shopping experience.">
+
+    <!-- ===== Google Fonts ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Prata&family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm custom-navbar px-3 px-md-5">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center me-lg-5" href="index.html">
+                <img alt="Leaf & Ink Logo" class="img-fluid" style="height: 60px; object-fit: contain;" src="logo.png">
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto gap-lg-4 text-center my-3 my-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="store.html">STORE</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="about.html">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="blog.html">BLOG</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="contact.html">CONTACT</a></li>
+                </ul>
+
+                <!-- Right Icons & Auth Section -->
+                <div class="header-icons d-flex align-items-center justify-content-center gap-3 ms-lg-3">
+
+                    <!-- Register Icon (User + Plus) -->
+                    <button id="user-register-icon"
+                        class="icon-btn btn btn-link p-0 text-decoration-none text-dark fs-5" aria-label="Register">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </button>
+
+                    <!-- Sign In / Sign Out Button -->
+                    <button id="nav-auth-btn" class="btn btn-outline-dark btn-sm rounded-pill px-3 fw-semibold"
+                        style="font-size: 0.9rem;">
+                        Sign In
+                    </button>
+
+                    <a href="#" id="search-icon" class="search-toggle text-dark fs-5" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+
+                    <a href="wishlist.html" class="text-dark fs-5" aria-label="Wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="cart.html"
+                        class="cart text-decoration-none text-dark d-flex align-items-center gap-1 fs-6 fw-semibold"
+                        aria-label="Cart">
+                        <i class="fa-solid fa-cart-shopping fs-5"></i>
+                        <span class="ms-1">Cart: (<span class="cart-count">0</span>)</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Overlay Modal -->
+    <div id="search-overlay" class="search-overlay hidden">
+        <div class="search-box-container">
+            <div class="search-header">
+                <i class="fa-brands fa-sistrix text-muted fs-5"></i>
+                <input type="text" id="search-input" placeholder="Search by book title or author..." autocomplete="off">
+                <button id="close-search-btn" class="close-search-btn">&times;</button>
+            </div>
+            <div id="search-results" class="search-results-list">
+                <p class="search-placeholder-text">Type to search books...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ////////////////// -->
+    <!-- Auth Modal Overlay -->
+    <div id="auth-modal" class="modal-overlay hidden">
+        <div class="modal-content p-4 position-relative">
+            <button id="close-btn" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
+
+            <!-- 1. Register View -->
+            <div id="register-view" class="auth-view">
+                <h3 class="mb-3 text-center">Create New Account</h3>
+                <form id="register-form">
+                    <div class="mb-2">
+                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name" required>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name" required>
+                    </div>
+                    <div class="mb-2">
+                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                    <div class="mb-2">
+                        <input type="password" id="reg-password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number">
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">Register</button>
+                </form>
+            </div>
+
+            <!-- 2. Sign In View -->
+            <div id="login-view" class="auth-view hidden">
+                <h3 class="mb-3 text-center">Sign In</h3>
+
+                <!-- Alert Message for Invalid Credentials -->
+                <div id="login-error-msg" class="alert alert-danger d-none py-2 text-center" role="alert">
+                   The data is incorrect, please check your email and password!
+                </div>
+
+                <form id="login-form">
+                    <div class="mb-3">
+                        <input type="email" id="login-email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100">Sign In</button>
+                </form>
+            </div>
+
+            <!-- 3. Profile / Sign Out View -->
+            <div id="profile-view" class="auth-view hidden text-center">
+                <h3 class="mb-3">Welcome Back!</h3>
+                <p class="m-1"><strong>Name:</strong> <span id="user-fullname-display"></span></p>
+                <p class="m-1"><strong>Email:</strong> <span id="user-email-display"></span></p>
+                <p class="mb-4"><strong>Mobile:</strong> <span id="user-mobile-display"></span></p>
+                <button id="logout-btn" class="btn btn-danger w-100">Sign Out</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="navbar-spacer w-100"></div>
+    <!-- Section Featured Books -->
+    <section id="featured-books" class="py-5 my-5">
+        <h1 class="title text-center mb-5">Featured Books</h1>
+        <div class="container">
+            <div class="product-list" data-aos="fade-up">
+                <div class="row g-4" id="featured-books-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Popular Books -->
+    <section id="popular-books" class="bookshelf py-5 my-5">
+        <h1 class="title text-center mb-5">Popular Books</h1>
+        <div class="container">
+            <div id="all-genre" data-tab-content class="active">
+                <div class="row g-4" id="popular-books-grid"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 custom-footer">
+        <div class="container fw-bold">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a href="about.html" class="d-inline-block mb-3 text-decoration-none">
+                        <img src="logo.png" alt="Leaf & Ink Logo" class="img-fluid px-3"
+                            style="height: 60px; object-fit: contain;">
+                    </a>
+                    <p class="text-muted">
+                        Your trusted online bookstore offering a wide collection of books across different categories.
+                        Discover, explore, and enjoy your reading journey.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="mb-4 fw-bold">About Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none footer-link">Vision</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none footer-link">Our Team</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none footer-link">Careers</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none footer-link">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="mb-4 fw-bold">Discover</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none footer-link">Home</a></li>
+                        <li class="mb-2"><a href="store.html" class="text-decoration-none footer-link">Store</a></li>
+                        <li class="mb-2"><a href="store.html" class="text-decoration-none footer-link">Categories</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="mb-4 fw-bold">My Account</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" id="footer-login-btn" class="text-decoration-none footer-link">Sign
+                                In</a></li>
+                        <li class="mb-2"><a href="#" id="footer-profile-btn"
+                                class="text-decoration-none footer-link">Profile</a></li>
+                        <li class="mb-2"><a href="cart.html" class="text-decoration-none footer-link">View Cart</a></li>
+                        <li class="mb-2"><a href="wishlist.html" class="text-decoration-none footer-link">My
+                                Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="mb-4 fw-bold">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Help Center</a>
+                        </li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Report a problem</a>
+                        </li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Suggesting edits</a>
+                        </li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="end text-center fw-bold">
+            <p>© 2026 <a href="about.html" class=" logo-hover fw-bolder text-decoration-none">Leaf & Ink</a>. All Rights Reserved. Developed
+                by NTI Students</p>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

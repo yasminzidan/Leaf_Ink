@@ -1,0 +1,125 @@
+/* ==========================================
+   Large Devices (992px - 1199px)
+========================================== */
+
+@media (max-width: 1199px) {
+
+}
+
+
+/* ==========================================
+   Medium Devices (768px - 991px)
+========================================== */
+
+@media (max-width: 991px) {
+
+    .container{
+        width: 90%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .book-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+/* ==========================================
+   Small Devices (576px - 767px)
+========================================== */
+
+@media (max-width: 767px) {
+
+    h1{
+        font-size: 32px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+
+    p{
+        font-size: 15px;
+    }
+
+    .book-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .store-header{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cart-item{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .book-details{
+        flex-direction: column;
+    }
+
+    .contact-container{
+        flex-direction: column;
+    }
+
+}
+
+
+/* ==========================================
+   Mobile Devices (<576px)
+========================================== */
+
+@media (max-width: 575px) {
+
+    .container{
+        width: 95%;
+    }
+
+    .navbar{
+        padding: 10px;
+    }
+
+    .logo{
+        font-size: 24px;
+    }
+
+    .hero h1{
+        font-size: 28px;
+    }
+
+    .hero p{
+        font-size: 14px;
+    }
+
+    .btn{
+        width: 100%;
+    }
+
+    .book-card{
+        width: 100%;
+    }
+
+    .cart-table{
+        overflow-x: auto;
+    }
+
+    input,
+    select,
+    textarea{
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,72 @@
+.blog{
+    padding:90px 8%;
+    margin-top: 70px;
+}
+.blog h1{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:50px;
+    color: rgb(90, 125, 101);
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    line-height: 48px;
+}
+.blog-container{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.card{
+    width:355px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    overflow:hidden;
+    background:#fff;
+    transition:.3s;
+}
+.card:hover{
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+.card1{
+    height:220px;
+    background:#f3f3f3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    color:#777;
+    overflow: hidden;
+}
+.kool{
+    padding:25px;
+}
+.kool span{
+    font-size:13px;
+    font-weight:bold;
+    color:#666;
+}
+.kool h3{
+    margin:15px 0;
+    font-size:18px;
+}
+.kool p{
+    color:#666;
+    font-size: 13px;
+
+}
+.btn1{
+    color: #000;
+    position: relative; 
+    background-color: transparent;
+    border: none;
+}
+.btn1::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    height: 2px;
+    background: #000;
+}
