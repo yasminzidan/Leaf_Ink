@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="author" content="Leaf & Ink">
     <meta name="keywords" content="online bookstore, buy books online, book shop, textbooks, novels, book store">
     <meta name="description"
@@ -115,19 +115,19 @@
                 <h3 class="mb-3 text-center">Create New Account</h3>
                 <form id="register-form">
                     <div class="mb-2">
-                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name" required>
+                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name" autocomplete="given-name" required>
                     </div>
                     <div class="mb-2">
-                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name" required>
+                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name" autocomplete="family-name" required>
                     </div>
                     <div class="mb-2">
-                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address" required>
+                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address" autocomplete="email" required>
                     </div>
                     <div class="mb-2">
-                        <input type="password" id="reg-password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="reg-password" class="form-control" placeholder="Password" autocomplete="new-password" required>
                     </div>
                     <div class="mb-3">
-                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number">
+                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number" autocomplete="tel">
                     </div>
                     <button type="submit" class="btn btn-dark w-100">Register</button>
                 </form>
@@ -139,15 +139,15 @@
 
                 <!-- Alert Message for Invalid Credentials -->
                 <div id="login-error-msg" class="alert alert-danger d-none py-2 text-center" role="alert">
-                    The data is incorrect, please check your email and password!
+                   The data is incorrect, please check your email and password!
                 </div>
 
                 <form id="login-form">
                     <div class="mb-3">
-                        <input type="email" id="login-email" class="form-control" placeholder="Email Address" required>
+                        <input type="email" id="login-email" class="form-control" placeholder="Email Address" autocomplete="email" required>
                     </div>
                     <div class="mb-3">
-                        <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="login-password" class="form-control" placeholder="Password" autocomplete="new-password" required>
                     </div>
                     <button type="submit" class="btn btn-dark w-100">Sign In</button>
                 </form>

@@ -19,15 +19,15 @@ const DEFAULT_ORDER = "relevance";
 
 
 // -------------------------------------------
-// Search Categories لكل قسم في الموقع
+// Search Categories for each section on the site
 // -------------------------------------------
 const CATEGORIES = {
-  featured: "bestsellers",       // قسم Featured Books في الـ Home
-  popular: "fiction",             // قسم Popular Books في الـ Home
-  bestSelling: "classic literature", // قسم Best Selling Book (كتاب واحد)
-  store: "fiction",                // صفحة Our Store (الافتراضي لو مفيش بحث/فلترة)
-  offers: "self-help",             // قسم Special Offer
+  featured: "bestsellers",          // Featured Books section on Home page
+  popular: "fiction",               // Popular Books section on Home page
+  bestSelling: "classic literature", // Best Selling Book section (single book)
+  store: "fiction",                  // Our Store page (default if no search/filter)
+  offers: "self-help",               // Special Offer section
 };
 
-//// Default Search Category
+// Default Search Category
 const DEFAULT_CATEGORY = "fiction";

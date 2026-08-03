@@ -5,25 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
   initLiveSearch();
 });
 
-// -------------------------------------------
+
 // Featured Books
-// -------------------------------------------
 async function loadFeaturedBooks() {
   const books = await fetchBooks(CATEGORIES.featured, 4);
   renderBookCards(books, "#featured-books-grid");
 }
 
-// -------------------------------------------
 // Popular Books
-// -------------------------------------------
 async function loadPopularBooks() {
   const books = await fetchBooks(CATEGORIES.popular, 4);
   renderBookCards(books, "#popular-books-grid");
 }
 
-// -------------------------------------------
 // Render Book Cards
-// -------------------------------------------
 function renderBookCards(books, containerSelector) {
   const container = document.querySelector(containerSelector);
   if (!container) return;
@@ -42,11 +37,11 @@ function renderBookCards(books, containerSelector) {
 
     let price;
     if (book.saleInfo?.listPrice?.amount) {
-      // price = `${book.saleInfo.listPrice.amount} ${book.saleInfo.listPrice.currencyCode}`;
-      var seed = book.id.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
-      price = ((seed % 300) + 100).toFixed(2) + " EGP";
+      price = `${book.saleInfo.listPrice.amount} ${book.saleInfo.listPrice.currencyCode}`;
+
     } else {
-      price = `${(Math.random() * 300 + 100).toFixed(2)} EGP`;
+      var seed = book.id.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+      price = ((seed % 351) + 250).toFixed(2) + " EGP";
     }
 
     const cardHTML = `
@@ -75,9 +70,7 @@ function renderBookCards(books, containerSelector) {
   attachHomeAddToCartEvents();
 }
 
-// -------------------------------------------
 // Add To Cart Events
-// -------------------------------------------
 function attachHomeAddToCartEvents() {
   var addToCartButtons = document.querySelectorAll(".add-to-cart");
 
@@ -108,9 +101,7 @@ function attachHomeAddToCartEvents() {
   });
 }
 
-// -------------------------------------------
 // Auth View Helper
-// -------------------------------------------
 function openAuthView(viewName) {
   const authModal = document.getElementById('auth-modal');
   const registerView = document.getElementById('register-view');
@@ -119,21 +110,20 @@ function openAuthView(viewName) {
   const errorMsg = document.getElementById('login-error-msg');
   const successMsg = document.getElementById('register-success-msg');
 
-  // إخفاء رسائل الخطأ/النجاح عند التنقل
+  // Hide error/success messages while navigating
   if (errorMsg) errorMsg.classList.add('d-none');
   if (successMsg) successMsg.classList.add('d-none');
 
-  // إخفاء كل الـ views
+  // Hide all views
   if (registerView) registerView.classList.add('hidden');
   if (loginView) loginView.classList.add('hidden');
   if (profileView) profileView.classList.add('hidden');
 
-  // إظهار الـ view المطلوب
+  // Show the desired view
   if (viewName === 'register' && registerView) registerView.classList.remove('hidden');
   if (viewName === 'login' && loginView) loginView.classList.remove('hidden');
   if (viewName === 'profile' && profileView) profileView.classList.remove('hidden');
 
-  // إظهار المودال
   if (authModal) authModal.classList.remove('hidden');
 }
 
@@ -151,7 +141,7 @@ function initAuthModal() {
   const goToRegister = document.getElementById('go-to-register');
 
   // ====================================
-  // تحديث حالة الـ Navbar حسب Login State
+  // Update Navbar status based on Login State
   // ====================================
   function updateAuthState() {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
@@ -164,14 +154,14 @@ function initAuthModal() {
       const mobile = localStorage.getItem('userMobile') || 'Not provided';
       const fullName = `${fname} ${lname}`.trim();
 
-      // تحديث زر الـ Navbar
       if (navAuthBtn) {
         navAuthBtn.textContent = 'Sign Out';
         navAuthBtn.classList.remove('btn-outline-dark');
+        navAuthBtn.classList.remove('sign-in-btn');
         navAuthBtn.classList.add('btn-danger');
       }
 
-      // تحديث بيانات البروفايل
+      // Update profile data
       const nameEl = document.getElementById('user-fullname-display');
       const emailEl = document.getElementById('user-email-display');
       const mobileEl = document.getElementById('user-mobile-display');
@@ -185,6 +175,7 @@ function initAuthModal() {
         navAuthBtn.textContent = 'Sign In';
         navAuthBtn.classList.remove('btn-danger');
         navAuthBtn.classList.add('btn-outline-dark');
+        navAuthBtn.classList.add('sign-in-btn');
       }
     }
   }
@@ -199,7 +190,7 @@ function initAuthModal() {
   }
 
   // ====================================
-  // أحداث الـ Navbar
+  // Navbar events
   // ====================================
   document.addEventListener('click', (e) => {
     const registerIcon = e.target.closest('#user-register-icon');
@@ -234,9 +225,6 @@ function initAuthModal() {
     }
   });
 
-  // ====================================
-  // إغلاق المودال
-  // ====================================
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
       authModal.classList.add('hidden');
@@ -250,7 +238,7 @@ function initAuthModal() {
   });
 
   // ====================================
-  // التنقل بين Register و Login
+  // Switching between Register and Login
   // ====================================
   if (goToLogin) {
     goToLogin.addEventListener('click', (e) => {
@@ -281,17 +269,16 @@ function initAuthModal() {
       localStorage.setItem('userLastName', lname);
       localStorage.setItem('userMobile', mobile);
 
-      // إعادة تعيين الفورم
+      // Reset the form
       registerForm.reset();
 
-      // الانتقال للـ Login مع رسالة نجاح داخلية (بدون alert)
+      // Switch to Login with internal success message (no alert)
       openAuthView('login');
 
-      // إظهار رسالة نجاح داخل الـ login view
+      // Display a success message within the login view
       const loginView = document.getElementById('login-view');
       let successMsg = document.getElementById('register-success-msg');
 
-      // إنشاء رسالة النجاح لو مش موجودة
       if (!successMsg) {
         successMsg = document.createElement('div');
         successMsg.id = 'register-success-msg';
@@ -318,7 +305,7 @@ function initAuthModal() {
         enteredEmail === registeredEmail &&
         enteredPassword === registeredPassword
       ) {
-        // حفظ حالة الـ Login
+        // Save Login State
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userEmail', enteredEmail);
 
@@ -327,11 +314,10 @@ function initAuthModal() {
         loginForm.reset();
         updateAuthState();
 
-        // إغلاق المودال
         if (authModal) authModal.classList.add('hidden');
 
       } else {
-        // بيانات خاطئة
+        // Incorrect data
         if (loginErrorMsg) loginErrorMsg.classList.remove('d-none');
       }
     });
@@ -342,7 +328,7 @@ function initAuthModal() {
     logoutBtn.addEventListener('click', handleLogout);
   }
 
-  // تحديث الحالة عند تحميل الصفحة
+  // Update status when page loads
   updateAuthState();
 }
 

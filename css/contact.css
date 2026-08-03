@@ -2,7 +2,7 @@ body {
     background-color: rgb(253, 250, 245);
 }
 .test2{
-    height: 130px;
+    height: 110px;
 }
 .contact {
     display: block;
@@ -25,11 +25,10 @@ body {
     margin-top: 20px;
 }
 
-form {
+#contactForm {
     background-color: rgb(255, 255, 255);
     padding: 50px;
-    width: 50%;
-    margin: auto;
+    width: 100%;
     margin-top: 40px;
     margin-bottom: 20px;
     border: 0.8px solid rgb(230, 227, 218);

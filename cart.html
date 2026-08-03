@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="author" content="Leaf & Ink">
     <meta name="keywords" content="online bookstore, buy books online, book shop, textbooks, novels, book store">
     <meta name="description"
@@ -115,19 +115,19 @@
                 <h3 class="mb-3 text-center">Create New Account</h3>
                 <form id="register-form">
                     <div class="mb-2">
-                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name" required>
+                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name" autocomplete="given-name" required>
                     </div>
                     <div class="mb-2">
-                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name" required>
+                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name" autocomplete="family-name" required>
                     </div>
                     <div class="mb-2">
-                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address" required>
+                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address" autocomplete="email" required>
                     </div>
                     <div class="mb-2">
-                        <input type="password" id="reg-password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="reg-password" class="form-control" placeholder="Password" autocomplete="new-password" required>
                     </div>
                     <div class="mb-3">
-                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number">
+                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number" autocomplete="tel">
                     </div>
                     <button type="submit" class="btn btn-dark w-100">Register</button>
                 </form>
@@ -144,10 +144,10 @@
 
                 <form id="login-form">
                     <div class="mb-3">
-                        <input type="email" id="login-email" class="form-control" placeholder="Email Address" required>
+                        <input type="email" id="login-email" class="form-control" placeholder="Email Address" autocomplete="email" required>
                     </div>
                     <div class="mb-3">
-                        <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="login-password" class="form-control" placeholder="Password" autocomplete="new-password" required>
                     </div>
                     <button type="submit" class="btn btn-dark w-100">Sign In</button>
                 </form>
@@ -168,40 +168,47 @@
     <div class="test3 w-100"></div>
     <h1>Shopping Cart</h1>
     <div class="container">
-        <!-- قسم الـ Cart1 (يتم تفريغه لتتحكم به الـ JavaScript بالكامل) -->
-        <div class="cart1">
-            <div class="head">
-                <span>PRODUCT</span>
-                <span>PRICE</span>
-                <span>QUANTITY</span>
-                <span>SUBTOTAL</span>
-            </div>
-            <!-- العناصر سيتم إدراجها هنا تلقائياً بواسطة JavaScript -->
-        </div>
+        <div class="row">
 
-        <div class="total">
-            <h2>Cart Totals</h2>
-
-            <div class="row">
-                <span>Subtotal</span>
-                <span>0.00 EGP</span>
+            <div class="col-lg-8 col-md-12">
+                <div class="cart1">
+                    <div class="head">
+                        <span>PRODUCT</span>
+                        <span>PRICE</span>
+                        <span>QUANTITY</span>
+                        <span>SUBTOTAL</span>
+                    </div>
+                    <!-- Elements -->
+                </div>
             </div>
 
-            <div class="row">
-                <span>Shipping</span>
-                <span>Flat rate: 0.00 EGP</span>
+            <div class="col-lg-4 col-md-12">
+                <div class="total">
+                    <h2>Cart Totals</h2>
+
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span>0.00 EGP</span>
+                    </div>
+
+                    <div class="total-row">
+                        <span>Shipping</span>
+                        <span>Flat rate: 0.00 EGP</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="total-row total-price">
+                        <span>Total</span>
+                        <span>0.00 EGP</span>
+                    </div>
+
+                    <button class="checkout">
+                        PROCEED TO CHECKOUT
+                    </button>
+                </div>
             </div>
 
-            <hr>
-
-            <div class="row total-price">
-                <span>Total</span>
-                <span>0.00 EGP</span>
-            </div>
-
-            <button class="checkout">
-                PROCEED TO CHECKOUT
-            </button>
         </div>
     </div>
 
@@ -254,9 +261,11 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Help Center</a>
                         </li>
-                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Report a problem</a>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Report a
+                                problem</a>
                         </li>
-                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Suggesting edits</a>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Suggesting
+                                edits</a>
                         </li>
                         <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Contact Us</a>
                         </li>
@@ -265,7 +274,8 @@
             </div>
         </div>
         <div class="end text-center fw-bold">
-            <p>© 2026 <a href="about.html" class=" logo-hover fw-bolder text-decoration-none">Leaf & Ink</a>. All Rights Reserved. Developed
+            <p>© 2026 <a href="about.html" class=" logo-hover fw-bolder text-decoration-none">Leaf & Ink</a>. All Rights
+                Reserved. Developed
                 by NTI Students</p>
         </div>
     </footer>
@@ -276,4 +286,5 @@
     <script src="js/cart.js"></script>
     <script src="js/index.js"></script>
 </body>
+
 </html>

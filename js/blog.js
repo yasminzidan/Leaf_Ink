@@ -10,9 +10,6 @@ async function loadBlogArticles() {
   );
 
   const finalBooks = booksWithDescription.slice(0, 6);
-  
-  console.log("عدد الكتب بعد الفلترة:", finalBooks.length);
-
   renderBlogCards(finalBooks);
 }
 
@@ -34,7 +31,7 @@ function renderBlogCards(books) {
   books.forEach((book) => {
     const info = book.volumeInfo;
 
-    const title = info.title || "مقال بدون عنوان";
+    const title = info.title || "Untitled Article";
     const image = info.imageLinks?.thumbnail || "";
     const category = info.categories ? info.categories[0].toUpperCase() : "READING TIPS";
 

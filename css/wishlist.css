@@ -1,9 +1,8 @@
 .test4 {
-    height: 130px;
-    background-color: rgb(253, 250, 245);
+    height: 120px;
 }
 
-/* === حالة الـ Wishlist الفارغة Empty State === */
+/* === Wishlist: Empty State === */
 .wishlist {
     background-color: rgb(253, 250, 245);
     display: flex;
@@ -41,7 +40,6 @@
     margin-top: 20px;
 }
 
-/* زِر العودة للمتجر عند خلو القائمة */
 .wishlist .shop-btn,
 .wishlist button {
     background-color: rgb(90, 125, 101);
@@ -60,16 +58,17 @@
 
 .wishlist .shop-btn:hover,
 .wishlist button:hover {
-    background-color: rgb(54, 40, 142); /* متناسق مع اللون الموف الخاص بالفوتر والهيدر */
+    background-color: rgb(54, 40, 142);
     transform: translateY(-2px);
 }
 .Return-to-Shop {
     color: #ffffff !important;
     font-size: large;
 }
-/* === شبكة عرض المنتجات (Wishlist Grid) === */
+/* === عرض المنتجات (Wishlist Grid) === */
 .wishlist-grid {
-    display: none; /* يتغير لـ flex من الـ JS عند وجود كتب */
+    background-color: rgb(255, 251, 232);
+    display: none;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
@@ -77,7 +76,6 @@
     width: 100%;
 }
 
-/* === كارت الكتاب في المفضلة === */
 .wishlist-card {
     width: 260px;
     background: #ffffff;
@@ -117,7 +115,6 @@
     margin-bottom: 10px;
 }
 
-/* زِر الإزالة من المفضلة */
 .wishlist-card .remove-wishlist {
     position: absolute;
     top: 12px;

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="author" content="Leaf & Ink">
     <meta name="keywords" content="online bookstore, buy books online, book shop, textbooks, novels, book store">
     <meta name="description"
@@ -115,19 +115,24 @@
                 <h3 class="mb-3 text-center">Create New Account</h3>
                 <form id="register-form">
                     <div class="mb-2">
-                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name" required>
+                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name"
+                            autocomplete="given-name" required>
                     </div>
                     <div class="mb-2">
-                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name" required>
+                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name"
+                            autocomplete="family-name" required>
                     </div>
                     <div class="mb-2">
-                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address" required>
+                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address"
+                            autocomplete="email" required>
                     </div>
                     <div class="mb-2">
-                        <input type="password" id="reg-password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="reg-password" class="form-control" placeholder="Password"
+                            autocomplete="new-password" required>
                     </div>
                     <div class="mb-3">
-                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number">
+                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number"
+                            autocomplete="tel">
                     </div>
                     <button type="submit" class="btn btn-dark w-100">Register</button>
                 </form>
@@ -139,15 +144,17 @@
 
                 <!-- Alert Message for Invalid Credentials -->
                 <div id="login-error-msg" class="alert alert-danger d-none py-2 text-center" role="alert">
-                   The data is incorrect, please check your email and password!
+                    The data is incorrect, please check your email and password!
                 </div>
 
                 <form id="login-form">
                     <div class="mb-3">
-                        <input type="email" id="login-email" class="form-control" placeholder="Email Address" required>
+                        <input type="email" id="login-email" class="form-control" placeholder="Email Address"
+                            autocomplete="email" required>
                     </div>
                     <div class="mb-3">
-                        <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="login-password" class="form-control" placeholder="Password"
+                            autocomplete="new-password" required>
                     </div>
                     <button type="submit" class="btn btn-dark w-100">Sign In</button>
                 </form>
@@ -167,42 +174,52 @@
 
     <div class="test2 w-100"></div>
 
-    <div class="contact">
-        <h1>Contact Us</h1>
-        <p>We love to hear from you! Your comments and suggestions will be appreciated <br> and help us improve.</p>
+    <div class="container">
+        <div class="contact">
+            <h1>Contact Us</h1>
+            <p>We love to hear from you! Your comments and suggestions will be appreciated <br> and help us improve.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+
+                <form id="contactForm">
+
+                    <div class="information">
+
+                        <div class="data-name">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="FirstName">
+                        </div>
+
+                        <div class="data-name">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="LastName">
+                        </div>
+
+                    </div>
+
+                    <div class="massege">
+
+                        <div class="data">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="data">
+                            <label for="message">Message</label>
+                            <textarea id="message"></textarea>
+                        </div>
+
+                    </div>
+
+                    <button id="submitt" type="submit">SEND MESSAGE</button>
+
+                </form>
+
+            </div>
+        </div>
     </div>
-    <form>
-
-        <div class="information">
-
-            <div class="data-name">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="FirstName">
-            </div>
-
-            <div class="data-name">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="LastName">
-            </div>
-
-        </div>
-
-        <div class="massege">
-            <div class="data">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email">
-            </div>
-
-            <div class="data">
-                <label for="message">Message</label>
-                <textarea id="message"></textarea>
-            </div>
-
-        </div>
-
-        <button id="submitt" type="submit">SEND MESSAGE</button>
-
-    </form>
 
     <!-- Footer -->
     <footer class="py-5 custom-footer">
@@ -253,9 +270,11 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Help Center</a>
                         </li>
-                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Report a problem</a>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Report a
+                                problem</a>
                         </li>
-                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Suggesting edits</a>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Suggesting
+                                edits</a>
                         </li>
                         <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link">Contact Us</a>
                         </li>
@@ -264,7 +283,8 @@
             </div>
         </div>
         <div class="end text-center fw-bold">
-            <p>© 2026 <a href="about.html" class=" logo-hover fw-bolder text-decoration-none">Leaf & Ink</a>. All Rights Reserved. Developed
+            <p>© 2026 <a href="about.html" class=" logo-hover fw-bolder text-decoration-none">Leaf & Ink</a>. All Rights
+                Reserved. Developed
                 by NTI Students</p>
         </div>
     </footer>

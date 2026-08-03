@@ -89,7 +89,7 @@ function renderCartPage() {
 
     var cart = getCart();
 
-    // إزالة عناصر السلة السابقة مع الحفاظ على الهيدر head
+    // Remove previous cart elements while preserving the header
     var oldItems = cartContainer.querySelectorAll(".item, .cart-actions, .empty-cart-msg");
     oldItems.forEach(function (el) {
         el.remove();
@@ -111,7 +111,7 @@ function renderCartPage() {
         var itemSubtotal = unitPrice * item.quantity;
         subtotal += itemSubtotal;
 
-        var imgHTML = item.image ? `<img src="${item.image}" alt="${item.title}" style="width:100px;height:110px;object-fit:cover;border-radius:5px;margin-right:10px;">` : '';
+        var imgHTML = item.image ? `<img src="${item.image}" alt="${item.title}" style="width:110px;height:110px;object-fit:cover;border-radius:5px;margin-right:10px;">` : '';
 
         var itemHTML = `
             <div class="item" data-id="${item.id}">
@@ -158,7 +158,7 @@ function updateCartTotals(subtotal) {
     var shipping = subtotal > 0 ? 50 : 0;
     var total = subtotal + shipping;
 
-    var rows = document.querySelectorAll(".total .row span");
+    var rows = document.querySelectorAll(".total .total-row span");
     if (rows.length >= 6) {
         rows[1].textContent = subtotal.toFixed(2) + " EGP";
         rows[3].textContent = shipping > 0 ? "Flat rate: " + shipping.toFixed(2) + " EGP" : "Free";
@@ -167,8 +167,6 @@ function updateCartTotals(subtotal) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    initAuthModal();
-    initLiveSearch();
     updateCartCount();
     renderCartPage();
-});
+})

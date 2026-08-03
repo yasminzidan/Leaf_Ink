@@ -20,28 +20,28 @@ async function fetchWithRetry(url, retries = 6, delay = 1000) {
 async function fetchBooks(query = DEFAULT_CATEGORY, maxResults = MAX_RESULTS) {
     var cacheKey = "books_cache_" + query + "_" + maxResults;
 
-    // 1. نتأكد لو فيه نسخة مخزنة من قبل، ونستخدمها فورًا
+    // 1. We check if there is a previously stored copy, and use it immediately.
     var cached = localStorage.getItem(cacheKey);
     if (cached) {
-        console.log("تم جلب البيانات من الذاكرة المؤقتة (Cache)");
+        console.log("Retrieved book details from cache");
         return JSON.parse(cached);
     }
 
-    // 2. لو مفيش، نطلب من الـ API عادي
+    // 2. If there isn't one, we can request it from the API normally.
     try {
         const url = `${BASE_URL}?q=${query}&key=${API_KEY}&maxResults=${maxResults}&langRestrict=${DEFAULT_LANGUAGE}&orderBy=${DEFAULT_ORDER}`;
         const response = await fetchWithRetry(url);
         const data = await response.json();
         const items = data.items || [];
 
-        // 3. نخزن النتيجة عشان المرة الجاية
+        // 3. We save the result for next time
         if (items.length > 0) {
             localStorage.setItem(cacheKey, JSON.stringify(items));
         }
 
         return items;
     } catch (error) {
-        console.error("حصل خطأ في جلب الكتب:", error);
+        console.error("Failed to fetch books", error);
         return [];
     }
 }
@@ -51,7 +51,7 @@ async function fetchBookById(bookId) {
 
     var cached = localStorage.getItem(cacheKey);
     if (cached) {
-        console.log("تم جلب تفاصيل الكتاب من الذاكرة المؤقتة (Cache)");
+        console.log("Retrieved book details from cache");
         return JSON.parse(cached);
     }
 
@@ -63,7 +63,7 @@ async function fetchBookById(bookId) {
         localStorage.setItem(cacheKey, JSON.stringify(book));
         return book;
     } catch (error) {
-        console.error("حصل خطأ في جلب تفاصيل الكتاب:", error);
+        console.error("Failed to fetch books.", error);
         return null;
     }
 }

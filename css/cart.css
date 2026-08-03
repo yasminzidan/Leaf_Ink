@@ -10,12 +10,11 @@ h1{
     font-family:Georgia, serif;
 }
 .container{
-    display:flex;
     gap:40px;
     margin-bottom: 20px;
+    justify-content: center;
 }
 .cart1{
-    flex:3;
     border:1px solid #ddd;
     border-radius:10px;
     padding:25px;
@@ -70,7 +69,6 @@ h1{
     font-size:18px;
 }
 .total{
-    flex:1;
     border:1px solid #ddd;
     border-radius:10px;
     padding:25px;
@@ -79,7 +77,7 @@ h1{
 .total h2{
     margin-bottom:25px;
 }
-.row{
+.total-row{
     display:flex;
     justify-content:space-between;
     margin:20px 0;
@@ -148,50 +146,4 @@ h1{
 .update-btn:hover{
     color: #163d36;
     border-color: #163d36; 
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .head {
-        display: none;
-    }
-
-    .item {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 10px;
-        padding: 15px 0;
-    }
-
-    .cart-actions {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    .coupon {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .coupon input {
-        width: 100%;
-    }
-
-    .apply-btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .item {
-        grid-template-columns: 1fr;
-    }
-
-    .total {
-        padding: 15px;
-    }
 }

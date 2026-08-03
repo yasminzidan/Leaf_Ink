@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    initAuthModal();
-    initLiveSearch();
     loadStoreBooks("fiction");
     attachCategoryEvents();
 });
@@ -68,9 +66,8 @@ function renderStoreBooks(books) {
         if (book.saleInfo && book.saleInfo.listPrice) {
             price = book.saleInfo.listPrice.amount + " " + (book.saleInfo.listPrice.currencyCode || "EGP");
         } else {
-            // price = (Math.random() * 300 + 100).toFixed(2) + " EGP";
             var seed = book.id.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
-            price = ((seed % 300) + 100).toFixed(2) + " EGP";
+            price = ((seed % 351) + 250).toFixed(2) + " EGP";
         }
 
         productList.innerHTML += `

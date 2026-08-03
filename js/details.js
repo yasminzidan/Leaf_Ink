@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    initAuthModal();
-    initLiveSearch();
     loadBookDetails();
 });
 
@@ -83,7 +81,7 @@ function renderBookDetails(book) {
     } else {
         // price = (Math.random() * 300 + 100).toFixed(2) + " EGP"; //
         var seed = book.id.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
-        price = ((seed % 300) + 100).toFixed(2) + " EGP";
+        price = ((seed % 351) + 250).toFixed(2) + " EGP";
     }
     document.getElementById("bookPrice").innerText = price;
 
@@ -137,9 +135,8 @@ function renderBookDetails(book) {
             );
         });
     }
-    // ===============================
-    // WISHLIST BUTTON
 
+    // WISHLIST BUTTON
     var wishlistBtn = document.querySelector(".favorite");
     var wishlistIcon = wishlistBtn ? wishlistBtn.querySelector("i") : null;
 

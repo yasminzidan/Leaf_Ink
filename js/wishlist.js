@@ -1,7 +1,3 @@
-// ===========================================
-// Wishlist Logic - wishlist.js
-// ===========================================
-
 function getWishlist() {
     var data = localStorage.getItem("wishlist");
     return data ? JSON.parse(data) : [];
@@ -12,7 +8,7 @@ function saveWishlist(wishlist) {
 }
 
 // -------------------------------------------
-// إضافة/إزالة كتاب (بتستخدمها details.js عند الضغط على القلب)
+// Add/Remove Book (used by details.js when clicking on the heart)
 // -------------------------------------------
 function toggleWishlist(id, title, author, price, image) {
     var wishlist = getWishlist();
@@ -21,14 +17,14 @@ function toggleWishlist(id, title, author, price, image) {
     });
 
     if (existingIndex > -1) {
-        wishlist.splice(existingIndex, 1); // موجود بالفعل، نشيله
+        wishlist.splice(existingIndex, 1); // It already exists, we'll remove it.
     } else {
-        wishlist.push({ id: id, title: title, author: author, price: price, image: image }); // مش موجود، نضيفه
+        wishlist.push({ id: id, title: title, author: author, price: price, image: image });
     }
 
     saveWishlist(wishlist);
     renderWishlistPage();
-    return existingIndex === -1; // true لو اتضاف، false لو اتشال
+    return existingIndex === -1; // true if added, false if removed
 }
 
 function isInWishlist(id) {
@@ -48,13 +44,13 @@ function removeFromWishlist(id) {
 }
 
 // -------------------------------------------
-// عرض صفحة wishlist.html
+// View wishlist.html page
 // -------------------------------------------
 function renderWishlistPage() {
     var emptyMessage = document.querySelector("#wishlist-empty");
     var itemsContainer = document.querySelector("#wishlist-items");
 
-    if (!itemsContainer) return; // مش في صفحة الويشليست، متعملش حاجة
+    if (!itemsContainer) return; // Not on the Wishlist page, don't do anything
 
     var wishlist = getWishlist();
     itemsContainer.innerHTML = "";
