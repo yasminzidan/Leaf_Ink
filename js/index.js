@@ -322,6 +322,36 @@ function initAuthModal() {
       }
     });
   }
+  // Toggle Password Visibility
+  const toggleLoginPassword = document.getElementById('toggle-login-password');
+  const loginPasswordInput = document.getElementById('login-password');
+
+  if (toggleLoginPassword && loginPasswordInput) {
+    toggleLoginPassword.addEventListener('click', () => {
+      const isPassword = loginPasswordInput.type === 'password';
+      loginPasswordInput.type = isPassword ? 'text' : 'password';
+      toggleLoginPassword.innerHTML = isPassword
+        ? '<i class="fa-regular fa-eye-slash"></i>'
+        : '<i class="fa-regular fa-eye"></i>';
+    });
+  }
+  // Toggle Register Password Visibility
+  const toggleRegisterPassword = document.getElementById('toggle-register-password');
+  const registerPasswordInput = document.getElementById('reg-password');
+
+  if (toggleRegisterPassword && registerPasswordInput) {
+    toggleRegisterPassword.addEventListener('click', () => {
+
+      const isPassword = registerPasswordInput.type === 'password';
+
+      registerPasswordInput.type = isPassword ? 'text' : 'password';
+
+      toggleRegisterPassword.innerHTML = isPassword
+        ? '<i class="fa-regular fa-eye-slash"></i>'
+        : '<i class="fa-regular fa-eye"></i>';
+
+    });
+  }
 
   // Logout Button
   if (logoutBtn) {
@@ -417,4 +447,4 @@ function initLiveSearch() {
       searchResults.insertAdjacentHTML('beforeend', itemHTML);
     });
   }
-}
+} initAuthModal
