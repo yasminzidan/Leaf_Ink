@@ -331,8 +331,8 @@ function initAuthModal() {
       const isPassword = loginPasswordInput.type === 'password';
       loginPasswordInput.type = isPassword ? 'text' : 'password';
       toggleLoginPassword.innerHTML = isPassword
-        ? '<i class="fa-regular fa-eye-slash"></i>'
-        : '<i class="fa-regular fa-eye"></i>';
+        ? '<i class="fa-regular fa-eye"></i>'
+        : '<i class="fa-regular fa-eye-slash"></i>';
     });
   }
   // Toggle Register Password Visibility
@@ -347,8 +347,8 @@ function initAuthModal() {
       registerPasswordInput.type = isPassword ? 'text' : 'password';
 
       toggleRegisterPassword.innerHTML = isPassword
-        ? '<i class="fa-regular fa-eye-slash"></i>'
-        : '<i class="fa-regular fa-eye"></i>';
+        ? '<i class="fa-regular fa-eye"></i>'
+        : '<i class="fa-regular fa-eye-slash"></i>';
 
     });
   }

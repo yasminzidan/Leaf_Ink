@@ -114,6 +114,19 @@ footer
 .icon-btn:hover {
   color: mediumblue;
 }
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.password-toggle:hover {
+    color: #198754;
+}
 
 /* ===== Section Title ===== */
 .title {

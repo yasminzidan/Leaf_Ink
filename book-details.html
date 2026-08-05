@@ -114,21 +114,44 @@
                 <h3 class="mb-3 text-center">Create New Account</h3>
                 <form id="register-form">
                     <div class="mb-2">
-                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name" autocomplete="given-name" required>
+                        <input type="text" id="reg-fname" class="form-control" placeholder="First Name"
+                            autocomplete="given-name" required>
                     </div>
                     <div class="mb-2">
-                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name" autocomplete="family-name" required>
+                        <input type="text" id="reg-lname" class="form-control" placeholder="Last Name"
+                            autocomplete="family-name" required>
                     </div>
                     <div class="mb-2">
-                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address" autocomplete="email" required>
+                        <input type="email" id="reg-email" class="form-control" placeholder="Email Address"
+                            autocomplete="email" required>
                     </div>
-                    <div class="mb-2">
-                        <input type="password" id="reg-password" class="form-control" placeholder="Password" autocomplete="new-password" required>
+
+                    <!-- Password + Eye -->
+                    <div class="mb-2 position-relative">
+                        <input type="password" id="reg-password" class="form-control pe-5" placeholder="Password"
+                            autocomplete="new-password" required>
+
+                        <span id="toggle-register-password" class="password-toggle">
+                            <i class="fa-regular fa-eye-slash"></i>
+                        </span>
                     </div>
+
                     <div class="mb-3">
-                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number" autocomplete="tel">
+                        <input type="tel" id="reg-mobile" class="form-control" placeholder="Mobile Number"
+                            autocomplete="tel">
                     </div>
-                    <button type="submit" class="btn btn-dark w-100">Register</button>
+
+                    <button type="submit" class="btn btn-dark w-100">
+                        Register
+                    </button>
+
+                    <!-- Sign In -->
+                    <p class="text-center mt-3 small">
+                        Already have an account?
+                        <a href="#" id="go-to-login" class="text-decoration-none fw-bold" style="color:#198754;">
+                            Sign In
+                        </a>
+                    </p>
                 </form>
             </div>
 
@@ -138,17 +161,32 @@
 
                 <!-- Alert Message for Invalid Credentials -->
                 <div id="login-error-msg" class="alert alert-danger d-none py-2 text-center" role="alert">
-                   The data is incorrect, please check your email and password!
+                    The data is incorrect, please check your email and password!
                 </div>
 
                 <form id="login-form">
                     <div class="mb-3">
-                        <input type="email" id="login-email" class="form-control" placeholder="Email Address" autocomplete="email" required>
+                        <input type="email" id="login-email" class="form-control" placeholder="Email Address"
+                            autocomplete="current-password" required>
                     </div>
-                    <div class="mb-3">
-                        <input type="password" id="login-password" class="form-control" placeholder="Password" autocomplete="new-password" required>
+
+                    <!--  Password + Eye Icon -->
+                    <div class="mb-3 position-relative">
+                        <input type="password" id="login-password" class="form-control pe-2" placeholder="Password"
+                            autocomplete="current-password" required>
+                        <span id="toggle-login-password" class="password-toggle">
+                            <i class="fa-regular fa-eye-slash"></i>
+                        </span>
                     </div>
+
                     <button type="submit" class="btn btn-dark w-100">Sign In</button>
+
+                    <!-- Sign Up -->
+                    <p class="text-center mt-3 small">
+                        Don't have an account?
+                        <a href="#" id="go-to-register" class="text-decoration-none fw-bold" style="color:#198754;">Sign
+                            Up</a>
+                    </p>
                 </form>
             </div>
 
